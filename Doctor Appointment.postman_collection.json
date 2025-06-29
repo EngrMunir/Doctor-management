@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "3d4ee91b-fe21-4c8f-b120-f14c853c5ac3",
+		"name": "Doctor Appointment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31770718"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register-doctor",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "register-patient",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "login-patient",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "login-doctor",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Patient",
+			"item": [
+				{
+					"name": "my-profile",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "booking appointment",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "view booking appointment",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Doctor",
+			"item": [
+				{
+					"name": "add service",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "create availability",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRHIuIFNhcmFoIFJhaG1hbiIsImVtYWlsIjoiZHIuc2FyYWhAZXhhbXBsZS5jb20iLCJyb2xlIjoiZG9jdG9yIiwiX2lkIjoiNjg2MGIxZjk3ZTcxMDQxOGQzMWVjODczIiwiaWF0IjoxNzUxMTcwODQ4LCJleHAiOjE3NTExNzQ0NDh9.8nYJjH6mppH7Y7YYMPCy7rzIDHc1zAeEKef1bkCi5mg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"serviceId\": \"6860c1022aa47d7f2b2282a3\",\r\n  \"day\": \"Monday\",\r\n  \"slots\": [\"10:00 AM\", \"11:00 AM\", \"4:00 PM\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/doctor/availability",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"doctor",
+								"availability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get availability",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRHIuIFNhcmFoIFJhaG1hbiIsImVtYWlsIjoiZHIuc2FyYWhAZXhhbXBsZS5jb20iLCJyb2xlIjoiZG9jdG9yIiwiX2lkIjoiNjg2MGIxZjk3ZTcxMDQxOGQzMWVjODczIiwiaWF0IjoxNzUxMTcwODQ4LCJleHAiOjE3NTExNzQ0NDh9.8nYJjH6mppH7Y7YYMPCy7rzIDHc1zAeEKef1bkCi5mg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"serviceId\": \"6860c1022aa47d7f2b2282a3\",\r\n  \"day\": \"Monday\",\r\n  \"slots\": [\"10:00 AM\", \"11:00 AM\", \"4:00 PM\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/doctor/availability",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"doctor",
+								"availability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accept appointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRHIuIFNhcmFoIFJhaG1hbiIsImVtYWlsIjoiZHIuc2FyYWhAZXhhbXBsZS5jb20iLCJyb2xlIjoiZG9jdG9yIiwiX2lkIjoiNjg2MGIxZjk3ZTcxMDQxOGQzMWVjODczIiwiaWF0IjoxNzUxMTcwODQ4LCJleHAiOjE3NTExNzQ0NDh9.8nYJjH6mppH7Y7YYMPCy7rzIDHc1zAeEKef1bkCi5mg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"serviceId\": \"6860c1022aa47d7f2b2282a3\",\r\n  \"day\": \"Monday\",\r\n  \"slots\": [\"10:00 AM\", \"11:00 AM\", \"4:00 PM\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/doctor/availability",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"doctor",
+								"availability"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "view all appointment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiRHIuIFNhcmFoIFJhaG1hbiIsImVtYWlsIjoiZHIuc2FyYWhAZXhhbXBsZS5jb20iLCJyb2xlIjoiZG9jdG9yIiwiX2lkIjoiNjg2MGIxZjk3ZTcxMDQxOGQzMWVjODczIiwiaWF0IjoxNzUxMTcwODQ4LCJleHAiOjE3NTExNzQ0NDh9.8nYJjH6mppH7Y7YYMPCy7rzIDHc1zAeEKef1bkCi5mg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"serviceId\": \"6860c1022aa47d7f2b2282a3\",\r\n  \"day\": \"Monday\",\r\n  \"slots\": [\"10:00 AM\", \"11:00 AM\", \"4:00 PM\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/doctor/availability",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"doctor",
+								"availability"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

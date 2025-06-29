@@ -3,6 +3,8 @@ import status from 'http-status';
 import { UserServices } from './user.service';
 import { catchAsync } from '../../app/utils/catchAsync';
 import sendResponse from '../../app/utils/sendResponse';
+import { Service } from '../Doctor/service.model';
+import { Availability } from '../Availabilty/availability.model';
 
 const getAllUsers = catchAsync(async (req: Request, res: Response) => {
   const result = await UserServices.getAllUsersFromDB();
@@ -15,7 +17,9 @@ const getAllUsers = catchAsync(async (req: Request, res: Response) => {
 });
 
 const getMyProfile = catchAsync(async (req: Request, res: Response) => {
+  console.log(req.headers.authorization)
   const email = req.user?.email;
+  console.log(email)
   if (!email) throw new Error("User email is required");
   const result = await UserServices.getSingleUserFromDB(email);
   sendResponse(res, {
@@ -42,18 +46,28 @@ const getAllDoctors = catchAsync(async (req: Request, res: Response) => {
   });
 });
 
+
 const getSingleDoctor = catchAsync(async (req: Request, res: Response) => {
   const doctorId = req.params.id;
-  const doctor = await UserServices.getDoctorById(doctorId); // You need to create this
+
+  const doctor = await UserServices.getDoctorById(doctorId);
   if (!doctor) throw new Error("Doctor not found");
+
+  const services = await Service.find({ doctorId });
+  const availability = await Availability.find({ doctorId });
 
   sendResponse(res, {
     statusCode: status.OK,
     success: true,
-    message: 'Doctor retrieved successfully',
-    data: doctor,
+    message: 'Doctor profile fetched successfully',
+    data: {
+      doctor,
+      services,
+      availability,
+    },
   });
 });
+
 
 
 export const UserController = {

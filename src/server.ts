@@ -3,9 +3,9 @@
 
 import mongoose from 'mongoose';
 import app from './app';
-import config from './app/config';
 
 import { Server } from 'http';
+import config from './app/config';
 
 let server: Server;
 

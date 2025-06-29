@@ -1,21 +1,19 @@
 import express from 'express';
 import { AuthControllers } from './auth.controller';
-import { validateRequest } from '../../middlewares/validateRequest';
 import { AuthValidations } from './auth.validation';
+import validateRequest from '../../app/middleware/validateRequest';
 
 const router = express.Router();
 
 // Doctor registration
 router.post(
   '/register-doctor',
-  validateRequest(AuthValidations.registerDoctorValidationSchema),
   AuthControllers.registerDoctor
 );
 
 // Patient registration
 router.post(
   '/register-patient',
-  validateRequest(AuthValidations.registerPatientValidationSchema),
   AuthControllers.registerPatient
 );
 

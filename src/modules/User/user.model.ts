@@ -3,6 +3,7 @@ import bcrypt from 'bcrypt';
 import { IUser, UserModel } from './user.interface';
 import { USER_ROLE } from './user.constant';
 import config from '../../app/config';
+
 const userSchema = new Schema<IUser, UserModel>(
   {
     name: {

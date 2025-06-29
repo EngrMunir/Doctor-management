@@ -1,12 +1,7 @@
 import express from 'express';
 import { UserRoutes } from '../../modules/User/user.route';
 import { AuthRoutes } from '../../modules/Auth/auth.route';
-import { CourseRoutes } from '../../modules/Course/course.route';
-import path from 'path';
-import { ModuleRoutes } from '../../modules/Module/module.route';
-import { LectureRoutes } from '../../modules/Lecture/lecture.route';
-import { ProgressRoutes } from '../../modules/Progress/progress.route';
-import { ServiceRoutes } from '../../modules/Service/service.routes';
+import { ServiceRoutes } from '../../modules/Doctor/service.routes';
 import { AvailabilityRoutes } from '../../modules/Availabilty/availability.routes';
 import { AppointmentRoutes } from '../../modules/Appointment/appointment.routes';
 
@@ -14,7 +9,7 @@ const router = express.Router();
 
 const moduleRoutes =[
     {
-        path:'/user',
+        path:'/users',
         route: UserRoutes
     },
     {

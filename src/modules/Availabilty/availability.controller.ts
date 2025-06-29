@@ -6,6 +6,7 @@ import status from 'http-status';
 
 const createAvailability = catchAsync(async (req: Request, res: Response) => {
   const doctorId = req.user?._id;
+  console.log(doctorId)
   const result = await Availability.create({ ...req.body, doctorId });
 
   sendResponse(res, {

@@ -32,7 +32,7 @@ const auth = (...requiredRoles:TUserRole[])=>{
             throw new AppError(status.UNAUTHORIZED,'Unauthorized');
         }
 
-        const { role, email } = decoded;
+        const { role, email, _id, name } = decoded;
 
         const user = await User.isUserExistByEmail(email);
         if(!user){
@@ -45,7 +45,12 @@ const auth = (...requiredRoles:TUserRole[])=>{
     'You are not authorized!!'
   );
 }
-        req.user = user;
+        req.user = {
+            email,
+            role,
+            _id,
+            name,
+        };
 
             next();
 

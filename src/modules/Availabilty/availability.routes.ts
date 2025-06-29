@@ -1,23 +1,23 @@
 import express from 'express';
 import { AvailabilityController } from './availability.controller';
-import { verifyJWT, requireRole } from '../../middlewares/auth';
-import { validateRequest } from '../../middlewares/validateRequest';
 import {
   createAvailabilityValidationSchema,
   updateAvailabilityValidationSchema,
 } from './availability.validation';
+import validateRequest from '../../app/middleware/validateRequest';
+import auth from '../../app/middleware/auth';
+import { USER_ROLE } from '../User/user.constant';
 
 const router = express.Router();
 
-router.use(verifyJWT, requireRole('doctor'));
-
 router.post(
   '/',
+  auth(USER_ROLE.doctor),
   validateRequest(createAvailabilityValidationSchema),
   AvailabilityController.createAvailability
 );
 
-router.get('/', AvailabilityController.getMyAvailability);
+router.get('/',auth(USER_ROLE.doctor), AvailabilityController.getMyAvailability);
 
 router.patch(
   '/:id',

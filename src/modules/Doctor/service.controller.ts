@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
-import { Service } from './service.model';
 import { catchAsync } from '../../app/utils/catchAsync';
 import sendResponse from '../../app/utils/sendResponse';
 import status from 'http-status';
+import { Service } from './service.model';
 
 // Create service
 const createService = catchAsync(async (req: Request, res: Response) => {
